@@ -14,7 +14,7 @@ module.exports = {
 
     let stats = {
       strength: 0,
-      agility: 0,
+      dexterity: 0,
       intellect: 0,
       stamina: 0,
       armor: 0,
@@ -100,7 +100,7 @@ module.exports = {
 
     printStat('strength', false); // left
     say('<b><green>' + sprintf('%36s', 'Gold ')); // right
-    printStat('agility', false); // left
+    printStat('dexterity', false); // left
     say(sprintf('%36s', '.' + B.line(12) + '.')); // right
     printStat('intellect', false); // left
     say(sprintf('%22s| <b>%10s</b> |', '', p.getMeta('currencies.gold') || 0)); // right
