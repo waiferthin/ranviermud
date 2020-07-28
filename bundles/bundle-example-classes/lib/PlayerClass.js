@@ -1,5 +1,7 @@
 'use strict';
 
+
+
 const fs = require('fs');
 const path = require('path');
 
@@ -31,6 +33,33 @@ class PlayerClass {
     }
 
     return classes;
+  }
+
+  static addClass(className) {
+    try {
+      let bigClass = className.toUpperCase();
+      let data = `
+'use strict';
+/**
+* See warrior.js for more on classes.
+*/
+module.exports = {
+name: '${bigClass}',
+description: 'Add description',
+abilityTable: {},
+  setupPlayer: (state, player) => {
+  player.prompt = '[ %health.current%/%health.max% <b>hp</b> %movement.current%/%movement.max% <b>mv</b> ]';
+}
+};
+      `;
+      fs.writeFile("./bundles/bundle-example-classes/classes/" + className + ".js", data, function(err, result) {
+        if(err) console.log('error', err);
+      });
+
+      }
+    catch (er) {
+      console.error ("Error occurred", er);
+      }
   }
 
   static get(id) {
