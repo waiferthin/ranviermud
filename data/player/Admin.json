@@ -55,13 +55,13 @@
         "type": "regen",
         "unique": true
       },
-      "elapsed": 1761705,
+      "elapsed": 2784603,
       "id": "regen",
       "remaining": null,
       "state": {
         "magnitude": 15,
-        "lastTick": 1422,
-        "ticks": 585
+        "lastTick": 1450,
+        "ticks": 924
       }
     },
     {
@@ -71,20 +71,20 @@
         "duration": "inf",
         "hidden": true,
         "maxStacks": 0,
-        "name": "Equip: wield",
+        "name": "Equip: chest",
         "persists": true,
         "refreshes": false,
         "tickInterval": false,
-        "type": "equip.wield",
+        "type": "equip.chest",
         "unique": true
       },
-      "elapsed": 5730,
+      "elapsed": 786747,
       "id": "equip",
       "remaining": null,
       "state": {
-        "slot": "wield",
+        "slot": "chest",
         "stats": {
-          "critical": 1
+          "armor": 20
         }
       }
     }
@@ -93,37 +93,7 @@
   "inventory": {
     "items": [
       [
-        "0d6a81d1-39ca-4c2c-bba2-031291bf6b35",
-        {
-          "entityReference": "limbo:leathervest",
-          "inventory": null,
-          "metadata": {
-            "quality": "common",
-            "slot": "chest",
-            "level": 1,
-            "itemLevel": 1,
-            "stats": {
-              "armor": 20
-            },
-            "sellable": {
-              "value": 30,
-              "currency": "gold"
-            }
-          },
-          "description": "A plain leather vest. Better than nothing.",
-          "keywords": [
-            "leather",
-            "vest"
-          ],
-          "name": "Leather Vest",
-          "roomDesc": "Leather Vest",
-          "closed": false,
-          "locked": false,
-          "behaviors": {}
-        }
-      ],
-      [
-        "0d925773-5ac4-4e29-ba0a-0c0f1c35751d",
+        "ece3efe8-594b-49af-9e88-b3ef327b054d",
         {
           "entityReference": "limbo:potionhealth1",
           "inventory": null,
@@ -153,33 +123,90 @@
         }
       ],
       [
-        "4bffcb79-0f68-4a82-9d68-21f364dd850f",
+        "3e86da29-2438-420f-8bc1-a086bc1eeb6a",
         {
-          "entityReference": "limbo:potionstrength1",
+          "entityReference": "limbo:potionhealth1",
           "inventory": null,
           "metadata": {
             "level": 1,
             "usable": {
-              "effect": "potion.buff",
-              "charges": 2,
+              "spell": "potion",
+              "charges": 5,
               "destroyOnDepleted": true,
-              "config": {
-                "description": "Increases strength by <b>10</b> for <b>15</b> seconds",
-                "duration": 15000
-              },
-              "state": {
-                "magnitude": 10,
-                "stat": "strength"
+              "cooldown": 30,
+              "options": {
+                "restores": 30,
+                "stat": "health"
               }
             }
           },
           "description": "Nothing special.",
           "keywords": [
             "potion",
-            "strength"
+            "health"
           ],
-          "name": "Potion of Strength I",
-          "roomDesc": "Potion of Strength I",
+          "name": "Potion of Health I",
+          "roomDesc": "Potion of Health I",
+          "closed": false,
+          "locked": false,
+          "behaviors": {}
+        }
+      ],
+      [
+        "c463d4e5-ecbf-4b87-b4ce-07a97a31b621",
+        {
+          "entityReference": "limbo:potionhealth1",
+          "inventory": null,
+          "metadata": {
+            "level": 1,
+            "usable": {
+              "spell": "potion",
+              "charges": 5,
+              "destroyOnDepleted": true,
+              "cooldown": 30,
+              "options": {
+                "restores": 30,
+                "stat": "health"
+              }
+            }
+          },
+          "description": "Nothing special.",
+          "keywords": [
+            "potion",
+            "health"
+          ],
+          "name": "Potion of Health I",
+          "roomDesc": "Potion of Health I",
+          "closed": false,
+          "locked": false,
+          "behaviors": {}
+        }
+      ],
+      [
+        "636b01d1-53df-4bd4-94c3-045328d0055f",
+        {
+          "entityReference": "limbo:potionhealth1",
+          "inventory": null,
+          "metadata": {
+            "level": 1,
+            "usable": {
+              "spell": "potion",
+              "charges": 5,
+              "destroyOnDepleted": true,
+              "cooldown": 30,
+              "options": {
+                "restores": 30,
+                "stat": "health"
+              }
+            }
+          },
+          "description": "Nothing special.",
+          "keywords": [
+            "potion",
+            "health"
+          ],
+          "name": "Potion of Health I",
+          "roomDesc": "Potion of Health I",
           "closed": false,
           "locked": false,
           "behaviors": {}
@@ -202,7 +229,7 @@
           "state": [
             {
               "state": {
-                "count": 1
+                "count": 3
               },
               "progress": {
                 "percent": 100,
@@ -217,7 +244,7 @@
             },
             {
               "state": {
-                "count": 1
+                "count": 3
               },
               "progress": {
                 "percent": 100,
@@ -232,11 +259,11 @@
             },
             {
               "state": {
-                "equipped": true
+                "equipped": false
               },
               "progress": {
-                "percent": 100,
-                "display": "Wield A Weapon: Equipped"
+                "percent": 0,
+                "display": "Wield A Weapon: Not Equipped"
               },
               "config": {
                 "title": "Wield A Weapon",
@@ -245,11 +272,11 @@
             },
             {
               "state": {
-                "equipped": false
+                "equipped": true
               },
               "progress": {
-                "percent": 0,
-                "display": "Equip Some Armor: Not Equipped"
+                "percent": 100,
+                "display": "Equip Some Armor: Equipped"
               },
               "config": {
                 "title": "Equip Some Armor",
@@ -259,7 +286,7 @@
           ],
           "progress": {
             "percent": 75,
-            "display": "Find a Weapon: [1/1]\r\nFind Some Armor: [1/1]\r\nWield A Weapon: Equipped\r\nEquip Some Armor: Not Equipped"
+            "display": "Find a Weapon: [1/1]\r\nFind Some Armor: [1/1]\r\nWield A Weapon: Not Equipped\r\nEquip Some Armor: Equipped"
           },
           "config": {
             "level": 1,
@@ -271,30 +298,29 @@
   },
   "role": 2,
   "equipment": {
-    "wield": {
-      "entityReference": "limbo:rustysword",
+    "chest": {
+      "entityReference": "limbo:leathervest",
       "inventory": null,
       "metadata": {
-        "level": 1,
-        "slot": "wield",
-        "itemLevel": 1,
         "quality": "common",
-        "minDamage": 7,
-        "maxDamage": 15,
-        "speed": 2.8,
+        "slot": "chest",
+        "level": 1,
+        "itemLevel": 1,
         "stats": {
-          "critical": 1
+          "armor": 20
+        },
+        "sellable": {
+          "value": 30,
+          "currency": "gold"
         }
       },
-      "description": "An arm's-length, jagged metal sword discolored with red corrosion. The worn leather grip barely held on by fraying thread.",
+      "description": "A plain leather vest. Better than nothing.",
       "keywords": [
-        "sword",
-        "rusty",
-        "metal",
-        "rusted"
+        "leather",
+        "vest"
       ],
-      "name": "Rusty Sword",
-      "roomDesc": "Rusted Sword",
+      "name": "Leather Vest",
+      "roomDesc": "Leather Vest",
       "closed": false,
       "locked": false,
       "behaviors": {}

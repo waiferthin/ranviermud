@@ -56,9 +56,6 @@
 - <<: *trainingroom
   id: training2
   title: "Training Room 2"
-  items:
-    - id: "craft:greenplant"
-      respawnChance: 30
   npcs:
     - id: "limbo:trainingdummy"
       respawnChance: 25
@@ -74,9 +71,6 @@
 - <<: *trainingroom
   id: training3
   title: "Training Room 3"
-  items:
-    - id: "craft:redrose"
-      respawnChance: 15
   exits:
     - roomId: "limbo:training2"
       direction: west
@@ -124,7 +118,7 @@
       direction: down
 - id: wallys
   title: "Wally's Wonderful Wares (Shop)"
-  description: >- 
+  description: >-
     A very brightly colored shop stall stands in the middle of an otherwise desolate clearing. The stall is covered in
     colorful cloth, shining gems, and battle gear of all varieties. A large sign sits next to the products:
     "<b><yellow>Wally's Wonderful Wares</yellow></b> has the best products in town! Armor, weapons and potions, you name

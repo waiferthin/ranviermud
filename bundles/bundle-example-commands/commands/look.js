@@ -206,7 +206,6 @@ function lookEntity(state, player, args) {
 
   args = args.split(' ');
   let search = null;
-
   if (args.length > 1) {
     search = args[0] === 'in' ? args[1] : args[0];
   } else {
@@ -219,12 +218,21 @@ function lookEntity(state, player, args) {
   entity = entity || ArgParser.parseDot(search, player.inventory);
 
   if (!entity) {
-    return B.sayAt(player, "You don't see anything like that here.");
+    if (args[0] == "self") {
+      return B.sayAt(player, "You look at yourself.");
+    } else {
+      return B.sayAt(player, "You don't see anything like that here.");
+    }
   }
 
   if (entity instanceof Player) {
     // TODO: Show player equipment?
-    B.sayAt(player, `You see fellow player ${entity.name}.`);
+    if (player != entity) {
+      B.sayAt(player, `You look at ${entity.name}.`);
+      B.sayAt(entity, `${player.name} looks at you.`);
+    } else {
+      B.sayAt(player, "You look at yourself.");
+    }
     return;
   }
 

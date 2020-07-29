@@ -13,6 +13,7 @@
     "bundle-example-npc-behaviors",
     "bundle-example-player-events",
     "bundle-example-quests",
+    "simple-crafting",
     "vendor-npcs",
     "player-groups",
     "progressive-respawn",
@@ -61,7 +62,7 @@
     "items": {
       "source": "Yaml",
       "config": {
-        "path": "data/items/items.yml"
+        "path": "bundles/[BUNDLE]/areas/[AREA]/items.yml"
       }
     },
     "rooms": {
