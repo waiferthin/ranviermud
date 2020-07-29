@@ -1,7 +1,7 @@
 'use strict';
 
 const sprintf = require('sprintf-js').sprintf;
-const { Broadcast } = require('ranvier');
+const { Broadcast, PlayerRoles } = require('ranvier');
 
 function sayAtColumns (source, strings, numCols) {
   //Build a 2D map of strings by col/row
@@ -56,14 +56,33 @@ module.exports = {
   aliases: ['channels'],
   command: (state) => (args, player) => {
 
+    //print Admin commandState
+    if (player.role >= PlayerRoles.ADMIN) {
+    Broadcast.sayAt(player, "<bold><white>                  Admin Commands</bold></white>");
+    Broadcast.sayAt(player, "<bold><white>===============================================</bold></white>");
+    let adminCommands = [];
+    for (let [ name, command ] of state.CommandManager.commands) {
+      if (player.role >= command.requiredRole) {
+        if (command.requiredRole >= PlayerRoles.ADMIN) {
+            adminCommands.push(name);
+        }
+      }
+    }
+    adminCommands.sort()
+    sayAtColumns(player, adminCommands, 4)
+    }
+
     // print standard commands
+    Broadcast.sayAt(player);
     Broadcast.sayAt(player, "<bold><white>                  Commands</bold></white>");
     Broadcast.sayAt(player, "<bold><white>===============================================</bold></white>");
 
     let commands = [];
     for (let [ name, command ] of state.CommandManager.commands) {
       if (player.role >= command.requiredRole) {
-        commands.push(name);
+        if (command.requiredRole < PlayerRoles.ADMIN) {
+          commands.push(name);
+        }
       }
     }
 
@@ -82,7 +101,7 @@ module.exports = {
     }
 
     channelCommands.sort();
-    sayAtColumns(player, channelCommands, 4)
+    sayAtColumns(player, channelCommands, 6)
 
 
     // end with a line break

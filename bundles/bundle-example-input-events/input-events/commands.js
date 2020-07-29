@@ -15,9 +15,18 @@ module.exports = {
         player.socket.emit('commands', player);
       }
       data = data.toString().trim();
-
+      var dataArray = new Array();
       if (!data.length) {
         return loop();
+      }
+      // if the last command was !, set data to the previous command
+      if (data ==="!") {
+        console.log(player.metadata.history);
+        data = player.metadata.history;
+      }
+      //otherwise set the previous command
+      else {
+        player.metadata.history = data;
       }
 
       player._lastCommandTime = Date.now();

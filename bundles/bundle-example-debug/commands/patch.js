@@ -12,7 +12,7 @@ module.exports = {
   if (!args || !args.length) {
     return B.sayAt(player, 'Patch which attribute?');
   }
-
+//XXX WIP
 B.sayAt(player, `<b><red>PATCH</red></b>: testing [${args}]...`);
 /* const attribute = ;
 const target = ;
